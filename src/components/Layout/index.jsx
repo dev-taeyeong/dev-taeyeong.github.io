@@ -18,13 +18,13 @@ const Layout = ({ children }) => {
 
   let localTheme = null
   if (typeof localStorage !== "undefined") {
-    localTheme = sessionStorage.getItem("theme")
+    localTheme = localStorage.getItem("theme")
   }
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark"
     dispatch(nextTheme === "dark" ? setDark : setLight)
-    localTheme = sessionStorage.setItem("theme", nextTheme)
+    localTheme = localStorage.setItem("theme", nextTheme)
   }
 
   useEffect(() => {
