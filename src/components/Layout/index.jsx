@@ -16,11 +16,6 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch()
   const { theme } = useSelector(state => state.theme)
 
-  let isSystemDarkMode = null
-  if (typeof window !== "undefined") {
-    isSystemDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-  }
-
   let localTheme = null
   if (typeof localStorage !== "undefined") {
     localTheme = sessionStorage.getItem("theme")
